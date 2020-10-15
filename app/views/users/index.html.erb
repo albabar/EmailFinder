@@ -1,4 +1,12 @@
 <h1>Users</h1>
+
+<%= form_with(model: User.new) do |f| %>
+  <%= f.text_field :first_name %>
+  <%= f.text_field :last_name %>
+  <%= f.text_field :domain %>
+  <input type="submit" value="Check for Email">
+<% end %>
+
 <% if @users.length.positive? %>
   <%= render 'users_table', users: @users %>
 <% else %>
