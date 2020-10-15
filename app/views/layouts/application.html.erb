@@ -6,13 +6,22 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
 
   <body>
-    <% flash.keys.each do |key| %>
-      <%= flash[key] %>
-    <% end %>
-    <%= yield %>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="<%= root_url %>" class="brand-logo"><i class="material-icons large">person_search</i>EmailFinder</a>
+      </div>
+    </nav>
+    <div class="container">
+      <% flash.keys.each do |key| %>
+        <div class="card-panel teal lighten-4"><%= flash[key] %></div>
+      <% end %>
+      <%= yield %>
+    </div>
   </body>
 </html>
