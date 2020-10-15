@@ -2,8 +2,8 @@
 
 class EmailGenerator
   def initialize(first_name, last_name, domain)
-    @first_name = first_name.to_s
-    @last_name = last_name.to_s
+    @first_name = first_name.to_s.delete(' ')
+    @last_name = last_name.to_s.delete(' ')
     @domain = domain.to_s
     raise ArgumentError, "Invalid/Empty domain" if domain.blank? || !domain.include?('.')
   end
